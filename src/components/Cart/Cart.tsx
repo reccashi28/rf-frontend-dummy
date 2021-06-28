@@ -1,8 +1,8 @@
-import { Backdrop, Box, Button, Card, CardContent, CircularProgress, createStyles, makeStyles, Theme, Typography } from '@material-ui/core'
-import React, { useState } from 'react'
+import { Box, Button, Card, CardContent, createStyles, makeStyles, Theme, Typography } from '@material-ui/core'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addItemToCart, fetchCart } from '../../redux/actions';
-import { AppState, Cart } from '../../types'
+import { addItemToCart } from '../../redux/actions';
+import { AppState } from '../../types'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

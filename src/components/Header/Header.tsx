@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { Badge, Box, Button, CircularProgress, Drawer, Grid, Typography } from '@material-ui/core'
+import { Badge, Box, Button, Drawer, Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 function Header() {
     const classes = useStyles();
     const dispatch = useDispatch()
-    const { role, name, pending} = useSelector( (state: AppState) => state.user )
+    const { role, name} = useSelector( (state: AppState) => state.user )
     const { inCart } = useSelector( (state: AppState) => state.cart )
     // const history = useHistory();
     const isSignedIn = useUser();

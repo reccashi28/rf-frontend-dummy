@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,10 +10,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Backdrop, CircularProgress, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 import { AppState, Product } from '../../types';
-import { addItemToCart, deleteProduct, fetchCart, fetchPending, fetchPendingItems } from '../../redux/actions';
+import { addItemToCart, deleteProduct, fetchPendingItems } from '../../redux/actions';
 // import ConfirmDialog from '../ConfirmDialog/ConfirmDialog';
 
 type ProductCardProps = {
@@ -76,10 +76,10 @@ function ProductCard( {prod}: ProductCardProps) {
     // }, 1000);
   }
 
-  const handleClose = () => {
-    dispatch(fetchCart(userId))
-    // setIsOpen(false)
-  }
+  // const handleClose = () => {
+  //   dispatch(fetchCart(userId))
+  //   // setIsOpen(false)
+  // }
 
 return (
 <>

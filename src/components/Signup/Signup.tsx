@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { createNewUser } from '../../redux/actions/user';
-import Notification from '../Notification/Notification'
+// import Notification from '../Notification/Notification'
 import { useHistory } from 'react-router';
 import { AppState } from '../../types';
 import { Link } from 'react-router-dom';
@@ -68,7 +68,7 @@ const validationSchema = yup.object({
 
 export default function SignUp() {
   const dispatch = useDispatch()
-  const [notify, setNotify] = useState({isOpen: false, message: '', type: ''})
+  // const [notify, setNotify] = useState({isOpen: false, message: '', type: ''})
   const classes = useStyles();
   const history = useHistory()
   const { role} = useSelector( (state: AppState) => state.user )
@@ -79,11 +79,11 @@ export default function SignUp() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       dispatch(createNewUser(values, history, "signup"))
-      setNotify({
-        isOpen: true,
-        message: 'User Created Successfully',
-        type: 'success'
-        })
+      // setNotify({
+      //   isOpen: true,
+      //   message: 'User Created Successfully',
+      //   type: 'success'
+      //   })
     }
 })
 // let errorExist;
