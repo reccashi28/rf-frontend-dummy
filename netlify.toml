@@ -1,1 +1,4 @@
-CI=false yarn build
+[build]
+  command = "yarn build && yarn export"
+  publish = "out"
+  CI=false
