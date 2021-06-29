@@ -5,14 +5,14 @@ import { Cart, CartActions, FETCH_PENDING, ITEMS_IN_CART, ItemToCart } from "../
 export const fetchCart = (userId: string) => {
     return async (dispatch: Dispatch) => {
         if(userId) {
-            axios.get(`/cart/${userId}`)
+            axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/cart/${userId}`)
             .then(res => {
                 if(res.data){
                     dispatch(getItemsInCart(res.data))
                 }
             })
             .catch(err => {
-                console.log(err)
+                console.log(err, "error")
             })
         }
        
@@ -30,7 +30,7 @@ export const getItemsInCart = (items: Cart): CartActions => {
 
 export const addItemToCart = (data: ItemToCart) => {
     return async (dispatch: Dispatch) => {
-        axios.post('/cart', data)
+        axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/cart`, data)
             .then( res => {
                 if(res.data) {
                     dispatch(fetchCart(data.purchasedBy))

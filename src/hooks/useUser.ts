@@ -11,7 +11,7 @@ function useUser() {
    const fetchCookie = async () => {
     dispatch(fetchPending())
     try {
-      const res = await axios.get('/users/isloggedin');
+      const res = await axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/users/isloggedin`);
       const resloggedIn =  res.data.signedin
       const resRole =  res.data.role
       const resName =  res.data.name

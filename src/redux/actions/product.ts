@@ -6,7 +6,7 @@ import { CREATE_NEW_PRODUCT, GET_PRODUCT_SUCCESS, Product, ProductActions, SEARC
 
 export const fetchProduct = () => {
     return async (dispatch: Dispatch) => {
-        const response = await fetch('/products')
+        const response = await fetch(`${process.env.REACT_APP_BASE_ENDPOINT}/products`)
         const data = await response.json()
         dispatch(getProductsSuccess(data))
     }
@@ -22,7 +22,7 @@ export const getProductsSuccess = (data: Product[]): ProductActions => {
 
 export const createProduct = (data: Product, history: any) => {
   return async (dispatch: Dispatch) => {
-    axios.post('/products', data)
+    axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/products`, data)
       .then( res => {
         if(res.data){
           return history.push('/product')
@@ -36,7 +36,7 @@ export const createProduct = (data: Product, history: any) => {
 
 export const editProduct = (data: Product, history: any) => {
   return async (dispatch: Dispatch) => {
-    axios.put(`/products/${data._id}`, data)
+    axios.put(`${process.env.REACT_APP_BASE_ENDPOINT}/products/${data._id}`, data)
       .then( res => {
         if(res.data){
           fetchProduct()
@@ -50,7 +50,7 @@ export const editProduct = (data: Product, history: any) => {
 
 export const deleteProduct = (id: string, history: any) => {
   return async (dispatch: Dispatch) => {
-    axios.delete(`/products/${id}`)
+    axios.delete(`${process.env.REACT_APP_BASE_ENDPOINT}/products/${id}`)
       .then( res => {
         if(res.data) {
           fetchProduct()
@@ -72,7 +72,7 @@ export const addProduct = (data: Product): ProductActions => {
 }
 
 export const searchProduct = (text: string, history: any): ProductActions => {
-  history.push('/product')
+  history.push(`${process.env.REACT_APP_BASE_ENDPOINT}/product`)
   return {
     type: SEARCH_KEYWORD,
     payload: {

@@ -5,7 +5,7 @@ import { getItemsInCart } from "./cart"
 
 export const createNewUser = (data: User, history: any, from : string) => {
     return async (dispatch: Dispatch) => {
-      axios.post('/users', data)
+      axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/users`, data)
         .then( res => {
           if(res.data) {
             fetchUser()
@@ -24,7 +24,7 @@ export const createNewUser = (data: User, history: any, from : string) => {
 
 export const userLogin = (loginData: UserLogIn, history: any) => {
   return async (dispatch: Dispatch) => {
-    axios.post('/users/login', loginData)
+    axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/users/login`, loginData)
       .then( res => {
         dispatch(getSignedInStatus(true))
         dispatch(getUserRole(res.data.role))
@@ -44,7 +44,7 @@ export const userLogin = (loginData: UserLogIn, history: any) => {
 
 export const userLogout = () => {
   return async (dispatch: Dispatch) => {
-    axios.get('/users/logout')
+    axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/users/logout`)
       .then( res => {
         dispatch(getSignedInStatus(false))
         dispatch(getUserRole("user"))
@@ -85,7 +85,7 @@ export const getUserName = ( data: string): UserActions => {
 
 export const fetchUser = () => {
   return async (dispatch: Dispatch) => {
-    axios.get('/users')
+    axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/users`)
       .then( res => dispatch(getUsers(res.data)))
       .catch( err => console.log(err))
   }
@@ -111,7 +111,7 @@ export const getUserId = ( data: string): UserActions => {
 
 export const deleteUser = ( data: string, history: any) => {
   return async (dispatch: Dispatch) => {
-    axios.delete(`/users/${data}`)
+    axios.delete(`${process.env.REACT_APP_BASE_ENDPOINT}/users/${data}`)
       .then( res => {
         if(res.data) {
           fetchUser()
@@ -134,7 +134,7 @@ export const getDialogData = ( dialog: DialogState ): UserActions => {
 
 export const updateUser = (data: User, history: any) => {
   return async (dispatch: Dispatch) => {
-    axios.put(`/users/${data._id}`, data)
+    axios.put(`${process.env.REACT_APP_BASE_ENDPOINT}/users/${data._id}`, data)
       .then( res => {
         if(res.data) {
           fetchUser()
