@@ -92,6 +92,8 @@ function UserCart() {
                             </CardContent>
                         </Card>   
                     )
+                   } else {
+                       return ""
                    }
                     
                 }) : "Cart is empty" 

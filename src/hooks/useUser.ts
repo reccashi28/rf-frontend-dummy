@@ -29,9 +29,13 @@ function useUser() {
   };
 // console.log(isSignedIn, "still signed in?")
 
+// The 'fetchCookie' function makes the dependencies of useEffect Hook (at line 34) change on every render. 
+// Move it inside the useEffect callback. Alternatively, wrap the definition of 'fetchCookie' 
+// in its own useCallback() Hook
+
 useEffect( () => {
    fetchCookie()
-}, [])
+},[])
 
 return isSignedIn;
 
