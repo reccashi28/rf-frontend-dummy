@@ -46,6 +46,7 @@ export const userLogout = () => {
   return async (dispatch: Dispatch) => {
     axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/users/logout`)
       .then( res => {
+        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
         dispatch(getSignedInStatus(false))
         dispatch(getUserRole("user"))
         dispatch(getItemsInCart({purchasedBy: "",
