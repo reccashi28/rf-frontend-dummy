@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     },
     text: {
         fontSize: 20,
+    },
+    btn__link: {
+        textDecoration: 'none',
     }
   }));
 
@@ -100,14 +103,14 @@ function Header() {
                         <Typography className={classes.text}>Hello, {name}</Typography>
                         </Box>
                         <Box m={2}>
-                        <Link to="/"><Button variant="contained" color="primary" onClick={()=> dispatch(userLogout())}>Logout</Button></Link>
+                        <Link to="/" className={classes.btn__link}><Button variant="contained" color="primary" onClick={()=> dispatch(userLogout())}>Logout</Button></Link>
                         </Box>
                     </Grid> 
                     : 
                     
                     <Grid item xs={5} sm={4} container justify="flex-end">
-                        <Link to="/signin"><Button variant="contained" color="primary">Login</Button></Link>
-                        <Link to="/signup"><Button variant="contained" color="secondary">Signup</Button></Link>
+                        <Link to="/signin"  className={classes.btn__link}><Button variant="contained" color="primary">Login</Button></Link>
+                        <Link to="/signup"  className={classes.btn__link}><Button variant="contained" style={{backgroundColor: 'orange'}}>Signup</Button></Link>
                     </Grid>
                   
                     }
