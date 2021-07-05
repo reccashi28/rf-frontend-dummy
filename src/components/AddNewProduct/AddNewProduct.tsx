@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme: Theme) =>
     margin: {
       margin: theme.spacing(1),
     },
+    container: {
+        color: 'black'
+    },
     extendedIcon: {
       marginRight: theme.spacing(1),
     },
@@ -114,7 +117,7 @@ function AddNewProduct() {
        >
            { ( {values, errors, touched, setFieldValue, setFieldTouched } )  => (
                <Form encType="multipart/form-data">
-                   <Grid  container direction="column" spacing={2}>
+                   <Grid  container direction="column" spacing={2} className={classes.container}>
                         <Grid item lg={10} md={10} sm={10} xs ={10}>
                             <Field name="name" component={TextField} label="Product Name">Name: </Field>
                         </Grid>
