@@ -18,6 +18,7 @@ import DashBoardUserForm from './components/DashBoardUserForm/DashBoardUserForm'
 import ProductDetails from './components/ProductDetails/ProductDetails';
 
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 
 axios.defaults.withCredentials = true;
@@ -90,6 +91,8 @@ function App() {
       </Grid>
       <Grid item xs={1} sm={2}/>
     </Grid> 
+    <Footer />
+
     </div>
   );
 }
