@@ -71,7 +71,7 @@ function ProductCard( {prod}: ProductCardProps) {
       }))
       dispatch(fetchPendingItems())
     } else {
-      history.push('/login')
+      history.push('/signin')
     }
     // setIsOpen(true)
       
