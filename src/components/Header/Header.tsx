@@ -133,7 +133,7 @@ function Header() {
                         </Drawer>
                         <Button  onClick={() => setCartOpen(true)}>
                             <Badge badgeContent={totalQuantity} color="error">
-                                <AddShoppingCartIcon />
+                                <AddShoppingCartIcon style={{color: 'white'}}/>
                             </Badge>
                         </Button>
                         </Box>

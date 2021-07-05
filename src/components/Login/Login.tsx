@@ -87,7 +87,7 @@ export default function SignIn() {
     <Container component="main" maxWidth="xs">
     <CssBaseline />
     <div className={classes.paper}>
-      <Typography component="h1" variant="h5">
+      <Typography component="h1" variant="h5" style={{color: 'black'}}>
         Sign In
       </Typography>
       <form className={classes.form} noValidate onSubmit={formik.handleSubmit}>

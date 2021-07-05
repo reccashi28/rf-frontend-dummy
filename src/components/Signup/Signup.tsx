@@ -97,18 +97,9 @@ export default function SignUp() {
     <Container component="main" maxWidth="sm" >
       <CssBaseline />
       <div className={classes.paper}>
-        {role === "user" ? (
-          <Typography component="h1" variant="h5">
-          <Typography>Hello</Typography>
-          Sign up
-        </Typography>
-        ) :
-         (
-          <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" style={{color: 'black'}}>
           Signup
-        </Typography>
-        )}
-        
+        </Typography>        
         <form className={classes.form} noValidate onSubmit={formik.handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
