@@ -42,7 +42,7 @@ function ProductCard( {prod}: ProductCardProps) {
   const classes = useStyles();
   const dispatch = useDispatch()
   const history = useHistory()
-  const { role, userId } = useSelector( (state: AppState) => state.user)
+  const { role, userId, isSignedIn } = useSelector( (state: AppState) => state.user)
   // const pending = useSelector( (state: AppState) => state.cart.pending)
   // const items = useSelector( (state: AppState) => state.cart.inCart)
   const [addToCartBtn, setAddToCartBtn] = useState(false)
@@ -61,7 +61,7 @@ function ProductCard( {prod}: ProductCardProps) {
     }
   }
   const handleAddToCart = (prodId: string) => {
-    // setIsOpen(true)
+    if(isSignedIn) {
       dispatch(addItemToCart({
         purchasedBy: userId,
         items: [{
@@ -70,6 +70,11 @@ function ProductCard( {prod}: ProductCardProps) {
         }]
       }))
       dispatch(fetchPendingItems())
+    } else {
+      history.push('/login')
+    }
+    // setIsOpen(true)
+      
       // window.location.reload()
     // setTimeout(() => {
     //   setIsOpen(false)
