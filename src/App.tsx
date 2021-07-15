@@ -12,13 +12,11 @@ import Login from './components/Login/Login';
 
 import Dashboard from './pages/Dashboard/Dashboard'
 import DashBoardUserForm from './components/DashBoardUserForm/DashBoardUserForm';
-// import PrivateRoute, {  PrivateRouteProps } from './components/PrivateRoute/PrivateRoute';
-// import { AppState } from './types';
-// import { useSelector } from 'react-redux';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import Footer from './components/Footer/Footer';
+
 
 import './App.css';
-import Footer from './components/Footer/Footer';
 
 
 axios.defaults.withCredentials = true;
@@ -78,13 +76,7 @@ function App() {
             <Route exact path="/dashboard/adduser">
               <DashBoardUserForm />
             </Route>
-             {/* <PrivateRoute path="/dashboard" component={Dashboard} /> */}
-              {/* <Dashboard />
-            </PrivateRoute> */}
-            {/* <PrivateRoute path="/dashboard/adduser" component={DashBoardUserForm} /> */}
-            {/* <PrivateRoute path="/dashboard/edit/:_id" component={DashBoardUserForm} /> */}
-            {/* <PrivateRoute path="/editProduct/:_id" component={AddNewProduct} /> */}
-            {/* <PrivateRoute path="/addProduct" component={AddNewProduct} /> */}
+
           </Switch>
           </Grid>
         </Router>   
