@@ -49,7 +49,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route  path="/product">
+            <Route  path="/products">
               <ProductCatalog />
             </Route>
             <Route path="/signup">

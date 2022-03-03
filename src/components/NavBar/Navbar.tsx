@@ -51,7 +51,7 @@ function Navbar() {
                     <Grid item>
                     <ul className={classes.nav}>
                         <li className={classes.nav_item}><Link className={classes.nav_link} to="/">Home</Link></li>
-                        <li className={classes.nav_item}><Link className={classes.nav_link} to="/product">Product</Link></li>
+                        <li className={classes.nav_item}><Link className={classes.nav_link} to="/products">Product</Link></li>
                     </ul>
                     </Grid>
                 </Grid>
