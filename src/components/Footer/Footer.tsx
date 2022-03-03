@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div style={{backgroundColor: '#00334e', color: 'white', bottom: 0, width: '100%', padding: '10px', marginTop: '20px'}}>
            <Box display='flex' justifyContent='center' alignItems='center'>
-                <Typography>All rights reserved © 2021</Typography>
+                <Typography>All rights reserved © {new Date().getFullYear()}</Typography>
             </Box>
         </div>
     )

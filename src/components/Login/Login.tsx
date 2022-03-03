@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogin } from '../../redux/actions/user';
+import { userLogin, userErrorData } from '../../redux/actions/user';
 import { useHistory } from 'react-router';
 import { AppState } from '../../types';
 // import useUser from '../../hooks/useUser';
@@ -105,6 +105,7 @@ export default function SignIn() {
               // error={formik.touched.email && Boolean(formik.errors.email)}
               // helperText={formik.touched.email && formik.errors.email}
               onChange={formik.handleChange}
+              onFocus={() => null !== userErrorMessage ? dispatch(userErrorData(null)):null }
             />
           </Grid>
           <Grid item xs={12}>
@@ -117,6 +118,7 @@ export default function SignIn() {
               type="password"
               id="password"
               onChange={formik.handleChange}
+              onFocus={() => null !== userErrorMessage ? dispatch(userErrorData(null)):null }
             />
           </Grid>
         </Grid>
