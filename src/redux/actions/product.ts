@@ -6,7 +6,7 @@ import { CREATE_NEW_PRODUCT, GET_PRODUCT_SUCCESS, Product, ProductActions, SEARC
 
 export const fetchProduct = () => {
     return async (dispatch: Dispatch) => {
-        const response = await fetch(`${process.env.REACT_APP_BASE_ENDPOINT}/api/v1/products`)
+        const response = await fetch(`${process.env.REACT_APP_BASE_ENDPOINT}/products`)
         const data = await response.json()
         dispatch(getProductsSuccess(data))
     }
